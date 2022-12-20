@@ -437,13 +437,19 @@
         }
 
         //DID NOT FINISH Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically
-             let ol = document.getElementsByClassName('list-unstyled')[0];
-            let li = ol.getElementsByTagName('li');
+             
+            function removeTwitter(){
+                let li = document.querySelectorAll('.list-unstyled:last-of-type>li>a');
+            let a = document.querySelectorAll('list-unstyled>li>a');
             for(let i = 0 ; i < li.length; i++){
-                if(li[i].innerText === 'Twitter'){
-                    document.getElementsByClassName('list-unstyled')[i].remove(li[i]);
+                console.log(li[i])
+                    
+                if(a[i] === 'Twitter'){
+                    
+    
                 }
             }
+        }
 
         /* Write a JavaScript functionality to remove the first 50 characters in the first paragraph for every blog post*/
         let firstP = document.querySelector('p').innerText;
