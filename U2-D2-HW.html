@@ -433,7 +433,7 @@
         // Write a JavaScript functionality to change the background of the jumbotron
 //
         function changeBgJumbotron(){
-            let jumbotron = document.getElementsByClassName('.jumbotron p-4 p-md-5 rounded ');
+            let jumbotron = document.querySelector('.jumbotron.p-4.p-md-5 rounded ')
             console.log(jumbotron)
         }
         changeBgJumbotron();//
@@ -475,7 +475,7 @@
 
         }
         /* Write a JavaScript functionality to remove the last Blog Post when the user clicks on the "Older" button*/
-        let btnOlder = document.getElementsByClassName('nav.blog-pagination>a.btn.btn-outline-primary')[0];
+        let btnOlder = document.querySelectorAll('nav.blog-pagination>a.btn.btn-outline-primary')[0];
         btnOlder.addEventListener('click', () =>{
             let blogPosts = document.getElementsByClassName('blog-post');
             blogPosts[blogPosts.length-1].remove();
@@ -483,15 +483,22 @@
 
         /* Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers the mouse on an author's name*/
         function hoverAuthor(){
-            let authors = document.querySelectorAll('div.blog-post>p.blog-post-meta>a')[0];
+            let authors = document.querySelectorAll('div.blog-post>p.blog-post-meta>a');
             for (let i = 0; i < authors.length; i++) {
                 
-                authors.addEventListener('mouseover', function(){
-                    alert(document.getElementsByClassName('div.blog-post:nth-of-type(i)>p.blog-post-meta:first-of-type>a'))
+                authors[i].addEventListener('mouseover', function(){
+                    alert(authors[i].innerHTML)
                 }) 
             }
         }
         // EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link
+        let cntRead = document.getElementsByClassName('stretched-link')[0];
+        for(let i = 0 ; i < cntRead.length; i++){
+            cntRead[i].addEventListener('click', function(){
+            cntRead.parentElement.parentElement.remove();
+        })
+        }
+        
     </script>
 </body>
 
