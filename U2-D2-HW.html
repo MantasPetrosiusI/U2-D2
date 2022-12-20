@@ -446,12 +446,13 @@
             }
 
         /* Write a JavaScript functionality to remove the first 50 characters in the first paragraph for every blog post*/
-        function removeFirstFifty(){
-            let firstP = document.querySelector('p').innerText;
+        let firstP = document.querySelector('p').innerText;
+        function removeFirstFifty(){ 
             console.log(firstP)
             let blogPosts = document.getElementsByClassName('blog-post');
             for(let i = 0 ; i < blogPosts.length; i++){
-                firstP.slice(50);
+                let temp =firstP.slice(50);
+                firstP = temp;
                 console.log(firstP)
             };
             
