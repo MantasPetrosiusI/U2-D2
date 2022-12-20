@@ -433,21 +433,17 @@
         // Write a JavaScript functionality to change the background of the jumbotron
 //
         function changeBgJumbotron(){
-            let jumbotron = document.querySelector('.jumbotron.p-4.p-md-5 rounded ')
-            console.log(jumbotron)
+            document.querySelector(".jumbotron").style.backgroundColor = "silver";
         }
-        changeBgJumbotron();//
 
-        // Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically
-        document.addEventListener("DOMContentLoaded", (event) => {
+        //DID NOT FINISH Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically
              let ol = document.getElementsByClassName('list-unstyled')[0];
             let li = ol.getElementsByTagName('li');
             for(let i = 0 ; i < li.length; i++){
                 if(li[i].innerText === 'Twitter'){
-                    ol.remove(li[i]);
+                    document.getElementsByClassName('list-unstyled')[i].remove(li[i]);
                 }
             }
-});
 
         /* Write a JavaScript functionality to remove the first 50 characters in the first paragraph for every blog post*/
         function removeFirstFifty(){
@@ -491,7 +487,7 @@
                 }) 
             }
         }
-        // EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link
+        //DID NOT FINISH EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link
         let cntRead = document.getElementsByClassName('stretched-link')[0];
         for(let i = 0 ; i < cntRead.length; i++){
             cntRead[i].addEventListener('click', function(){
